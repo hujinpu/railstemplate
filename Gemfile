@@ -12,6 +12,8 @@ gem 'pg'
 
 gem 'yajl-ruby', :require => 'yajl'
 gem 'nokogiri'
+gem 'decent_exposure'
+
 
 # Paginator
 # gem "kaminari"
@@ -26,8 +28,8 @@ gem 'nokogiri'
 # gem "simple_form"
 # gem 'fastercsv' # for Ruby 1.8.7+
 # gem 'prawn'
-# gem "haml"
-# gem "haml-rails"
+gem "haml"
+gem "haml-rails"
 # gem 'validates_timeliness', '~> 3.0.5'
 # gem 'acts-as-taggable-on'
  

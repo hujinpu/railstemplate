@@ -30,6 +30,7 @@ CODE
 generators = <<-GENERATORS
 
     config.generators do |g|
+      g.template_engine :haml
       g.test_framework :rspec
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
@@ -39,14 +40,16 @@ GENERATORS
 application generators
 
 # install jquery
-run "curl -L http://code.jquery.com/jquery.min.js > public/javascripts/jquery.js"
-run "curl -L http://github.com/rails/jquery-ujs/raw/master/src/rails.js > public/javascripts/rails.js"
+#run "curl -L http://code.jquery.com/jquery.min.js > public/javascripts/jquery.js"
+#run "curl -L http://github.com/rails/jquery-ujs/raw/master/src/rails.js > public/javascripts/rails.js"
+file 'public/javascripts/jquery.js', File.read("#{File.dirname(rails_template)}/jquery.js")
+file 'public/javascripts/rails.js', File.read("#{File.dirname(rails_template)}/rails.js")
 
 gsub_file 'config/application.rb', /(config.action_view.javascript_expansions.*)/, 
                                    "config.action_view.javascript_expansions[:defaults] = %w(jquery rails)"
 
 #add time format
-#environment 'Time::DATE_FORMATS.merge!(:default => "%Y/%m/%d %I:%M %p", :ymd => "%Y/%m/%d")'
+application '  Time::DATE_FORMATS.merge!(:default => "%Y/%m/%d %I:%M %p", :ymd => "%Y/%m/%d")'
 
 # .gitignore
 append_file '.gitignore', <<-CODE
