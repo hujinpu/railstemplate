@@ -13,6 +13,7 @@ gem 'pg'
 gem 'yajl-ruby', :require => 'yajl'
 gem 'nokogiri'
 gem 'decent_exposure'
+gem 'rails3-generators'
 
 
 # Paginator
