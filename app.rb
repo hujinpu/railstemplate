@@ -13,6 +13,12 @@ run "bundle install"
 
 # generate rspec
 generate "rspec:install"
+# speed up your test
+run "spork --bootstrap"
+
+gsub_file '.rspec', /(--colour)/, '\1 --drb'
+gsub_file 'spec/spec_helper.rb', /require 'rubygems'\s*/, ''
+gsub_file 'config/environments/test.rb', /(config.cache_classes) = true/, '\1 = false'
 
 # copy files
 file 'script/watchr.rb', File.read("#{File.dirname(rails_template)}/watchr.rb")

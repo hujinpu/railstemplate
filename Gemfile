@@ -5,10 +5,10 @@ gem 'rails', '3.0.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'mysql2'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'mysql2'
+#gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'moneta'
-gem 'pg'
+#gem 'pg'
 
 gem 'yajl-ruby', :require => 'yajl'
 gem 'nokogiri'
@@ -24,7 +24,7 @@ gem 'rails3-generators'
 # gem 'paperclip'
 # gem 'carrierwave'
 
-# gem 'devise', '~> 1.1.7'
+gem 'devise'
 # gem "cancan"
 # gem "simple_form"
 # gem 'fastercsv' # for Ruby 1.8.7+
@@ -51,6 +51,8 @@ group :test, :development do
   # gem "capybara"
   # gem 'yard'
   # gem "bluecloth"
+  gem 'ruby-debug19'
+  gem 'spork', '~> 0.9.0.rc'
 end
 
 # State machine
@@ -71,7 +73,6 @@ end
 
 # Debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
-# gem 'ruby-debug19'
 
 # Background Processing
 # gem 'delayed_job'
